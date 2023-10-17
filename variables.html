@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        //Example.
+        // Number: let age = 25;
+        // String: let greeting = "Hello";
+        // Boolean: let isAdult = true;
+        // Object: let person = {firstName: "John", lastName: "Doe"};
+        // Array: let colors = ["Red", "Blue", "Green"]; Array is collection of items.
+
+        // Defining variables to store data
+        let name = "Pavlo";
+        let age = 28;
+        let favouriteColor = "Green";
+        let hasChildren = false;
+        let colors = ["Red, White, Blue"];
+        let calledAfriend = null;   // empty value.
+        calledAfriend;              // undefined.
+        let DateOfBirth = new Date(1995,7,1);
+        const githubURL ="https://github.com/PavloSernetskyi";
+
+        // An object has properties and allows to store multiple data that relates to one person.
+        let person =                // defined object person.
+        {                           // properties inside of an object. 
+            firstName: "Pavlo",     // property firstName with string data, makes this property string data type.
+            lastName: "Sernetskyi", // property lastName.
+            age: 28,                // age property of int data type.
+            hasDog: false,          // hasDog boolean property.
+            hobbies: ["Archery", " Video Games", " River Rafting"],
+            scoreOnAssesment: [10, 20, 30]
+        };
+
+        //another object.
+        let student =
+        {
+            firstName: "John",
+            lastName: "Cena"
+        };
+
+        // A calculation.
+        let numberA = 10;
+        let numberB = 5;
+        let result = numberA + numberB;
+        console.log(result);
+        console.log("The result is: " + result); // text + var.
+        console.log(`The result is ${result}. my name is ${name} and I'm ${age}.`); // backticks '  ' $to call out the variable. preffered way.
+
+        console.log(`Hi, my name is ${name}! I'm ${age} years old, my favourite color is ${favouriteColor} and other colors that I like are ${colors} my date of birth is: ${DateOfBirth} and my github link is: ${githubURL}.`); // backticks '  ' $to call out the variable. preffered way.
+
+        // accesing properties that are defined inside of an object.
+        console.log(`Hi, my first name is ${person.firstName} and last name is ${person.lastName}! I'm ${person.age} years old, my hobbies are ${person.hobbies}.`);
+
+
+        // accesing properties that are defined inside of an object using array and displaying only first and third hobbies.
+        console.log(`Hi, my first name is ${person.firstName} and last name is ${person.lastName}! I'm ${person.age} years old, my first hooby is ${person.hobbies[0]} and my third hobby is ${person.hobbies[2]}.`);
+
+
+        // Create a Javascript object of your parents and display how many children they have.
+        let parents =
+        {
+            dadName: "Ivan",
+            momName: "Halyna",
+            children: 3
+        };
+        console.log(`My dad's name is ${parents.dadName}, my mom's name is ${parents.momName} and they have ${parents.children} childrens where I'm the youngest one.`)
+
+        // Create a Javascript object of your parents and display how many children they have. second way.
+        let parent1 =
+        {
+            firstName: "Ivan",
+            children: ["Pavlo", "Oksana", "Ruslana"]
+        }
+        let parent2 =
+        {
+            firstName: "Halyna",
+            children: ["Pavlo", "Oksana", "Ruslana"]
+        }
+        console.log(`My dad's name is ${parent1.firstName} and my mom's name is ${parent2.firstName} and they have`);
+
+    </script>
+</body>
+
+</html>
