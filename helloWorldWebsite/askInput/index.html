@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Name Input</title>
+</head>
+<body>
+    <label for="nameInput">Please enter your name: </label>
+    <input type="text" id="nameInput">
+    <button onclick="displayName()">Submit</button>
+    <p id="output"></p>
+
+    <script>
+        function displayName() {
+            // Get the input field's value
+            var name = document.getElementById("nameInput").value;
+
+            // Display the name in the output paragraph
+            document.getElementById("output").textContent = "Hello, " + name + "!";
+        }
+    </script>
+</body>
+</html>
