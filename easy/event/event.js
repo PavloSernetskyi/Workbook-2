@@ -32,5 +32,19 @@ const myAge2 = document.getElementById("myAge2");
 myAge2.addEventListener("keydown", showKeyPressedMessage2);
 
 function showKeyPressedMessage2(e) {
-  alert("You pressed" + e.code);
+    alert("You pressed" + e.code);
+}
+
+//extra extra feature.
+const text = document.getElementById("field3");
+
+text.addEventListener("keydown", showKeyPressedMessage3);
+
+function showKeyPressedMessage3(em) {
+    if (em.code === "Enter") {
+        alert("You pressed The best Enter in the world " + em.code);
+    }
+    if (em.code === "a") {
+        alert("You pressed A realy Cool A");
+    }
 }
