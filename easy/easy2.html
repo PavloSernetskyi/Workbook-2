@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store Demo</title>
+</head>
+<body>
+
+<h1>Welcome to <span id="storeName">ShoeStore</span>!</h1>
+
+<!-- Button to trigger the 'buyButton' event listener -->
+<button id="buyButton">Buy Now</button>
+
+<!-- Image to trigger the 'shoeImage' mouseover event listener -->
+<img src="images/nike-airmax-blue.webp" alt="Shoe Image" id="shoeImage" width="200px">
+
+<script>
+"use strict";
+
+// This is a single-line comment.
+
+/* This is a multi-line comment.
+   It spans several lines. */
+
+// Variables and Datatypes
+
+function variablesAndDataType () {
+    var websiteName = "ShoeStore"; // String datatype
+let totalProducts = 100; // Number datatype
+const TAX_RATE = 0.07; // Constant for tax rate (7%)
+let isSaleActive = true; // Boolean datatype
+let featuredShoe = null; // Null datatype
+let customerInfo; // Undefined datatype
+
+//Working with dates
+let purchaseDate = new Date(); //Current date and time
+// JavaScript Date and Time Variables for a Shoe E-commerce Website
+
+// Date when a particular shoe model was released
+let releaseDate = new Date("2024-05-01");
+console.log("Shoe Release Date:", releaseDate);
+
+// Date and time of a customer's last purchase
+let lastPurchaseDate = new Date("2023-10-24T11:15:00");
+console.log("Last Purchase Date and Time:", lastPurchaseDate);
+
+// Date for an upcoming shoe sale event
+let saleStartDate = new Date(2023, 9, 25); // Month is 0-indexed, so 9 is October
+console.log("Sale Start Date:", saleStartDate);
+
+// Date and time when a customer's order is expected to be delivered (5 days from purchase)
+let expectedDeliveryDate = new Date(lastPurchaseDate);
+expectedDeliveryDate.setDate(expectedDeliveryDate.getDate() + 5);
+console.log("Expected Delivery Date:", expectedDeliveryDate);
+
+// A method is a function that can be called on variables.
+
+
+// Beginning of the day when the website had the most visits (e.g., Black Friday)
+let peakTrafficDayStart = new Date("2023-11-24");
+peakTrafficDayStart.setHours(0, 0, 0, 0);
+console.log("Peak Traffic Day Start:", peakTrafficDayStart);
+
+// End of the day when the website had the most visits (e.g., Black Friday)
+let peakTrafficDayEnd = new Date("2023-11-24");
+peakTrafficDayEnd.setHours(23, 59, 59, 999);
+console.log("Peak Traffic Day End:", peakTrafficDayEnd);
+
+// Date when a customer signed up for a monthly shoe subscription
+let subscriptionStartDate = new Date();
+subscriptionStartDate.setDate(1);
+subscriptionStartDate.setHours(0, 0, 0, 0);
+console.log("Subscription Start Date:", subscriptionStartDate);
+
+// Date and time when a review was written for a shoe product
+let reviewTimestamp = new Date(1635207800000); // This is a sample timestamp value
+console.log("Review Timestamp:", reviewTimestamp);
+
+// Date when the next shoe model in a series is expected to be released (1 month from the last release)
+let nextReleaseDate = new Date(releaseDate);
+nextReleaseDate.setMonth(nextReleaseDate.getMonth() + 1);
+console.log("Next Release Date:", nextReleaseDate);
+
+// Date when the return period for a purchase ends (30 days from purchase)
+let returnEndDate = new Date(lastPurchaseDate);
+returnEndDate.setDate(returnEndDate.getDate() + 30);
+console.log("Return End Date:", returnEndDate);
+
+// JavaScript Date Formatting for a Shoe E-commerce Website
+let currentDate = new Date();
+}
+
+
+// 1. Full Date and Time: "Friday, October 25, 2023, 12:30:45 PM"
+let fullDateTime = currentDate.toLocaleString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+});
+console.log("Full Date and Time:", fullDateTime);
+
+// 2. Short Date: "10/25/2023"
+let shortDate = currentDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+});
+console.log("Short Date:", shortDate);
+
+// 3. Long Date: "Friday, October 25, 2023"
+let longDate = currentDate.toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+console.log("Long Date:", longDate);
+
+// 4. Short Time: "12:30 PM"
+let shortTime = currentDate.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true
+});
+console.log("Short Time:", shortTime);
+
+// 5. Long Time: "12:30:45 PM UTC"
+let longTime = currentDate.toUTCString().split(' ').slice(4, 8).join(' ');
+console.log("Long Time:", longTime);
+
+// Object for a shoe product
+let shoe = {
+  brand: "Nike",
+  model: "Air Max",
+  size: 42,
+  price: 120.5,
+  isAvailable: true,
+  colors: ["Red", "Blue", "Black"], // Array of strings
+  discount: function () {
+    // Method in an object
+    if (isSaleActive) {
+      return this.price * 0.9;
+    }
+    return this.price;
+  },
+};
+
+// Array of shoe products
+let shoes = [
+    { brand: "Adidas", model: "Ultraboost", size: 40, price: 140.0 },
+    { brand: "Puma", model: "Rebel", size: 41, price: 90.0 },
+    { brand: "New Balance", model: "Fresh Foam", size: 42, price: 110.0 },
+  ];
+
+  
+// For loop to list all shoe brands available
+for (let i = 0; i < shoes.length; i++) {
+    console.log(shoes[i].brand);
+  }
+  
+  // While loop to list all shoe models until a certain price point is reached
+  let maxPrice = 100;
+  let index = 0;
+  while (shoes[index] && shoes[index].price <= maxPrice) {
+    console.log(shoes[index].model);
+    index++;
+  }
+  
+  // Do-while loop to suggest at least one shoe model even if none meet the price criteria
+  do {
+    console.log(`Suggested Shoe: ${shoes[index].model}`);
+    index++;
+  } while (shoes[index] && shoes[index].price <= maxPrice);
+  
+  // For...of loop to iterate over shoe array
+  for (let shoeItem of shoes) {
+    console.log(`Brand: ${shoeItem.brand}, Model: ${shoeItem.model}`);
+  }
+  
+  // For...in loop to iterate over properties of a shoe object
+  for (let property in shoe) {
+    console.log(`${property}: ${shoe[property]}`);
+  }
+  
+  // Conditional statements
+  if (shoe.isAvailable) {
+    console.log("This shoe is available for purchase.");
+  } else {
+    console.log("Sorry, this shoe is out of stock.");
+  }
+  
+  // Switch case for handling different shoe sizes
+  switch (shoe.size) {
+    case 40:
+      console.log("Size is Small.");
+      break;
+    case 41:
+      console.log("Size is Medium.");
+      break;
+    case 42:
+      console.log("Size is Large.");
+      break;
+    default:
+      console.log("Size not available.");
+  }
+  
+  // Function to calculate total price including tax
+function calculateTotal(price) {
+    return price + price * TAX_RATE;
+  }
+
+  
+  // Event listener for a button click (assuming there's a button with id 'buyButton' in the HTML)
+  document.getElementById("buyButton").addEventListener("click", function () {
+    alert("Thank you for purchasing!");
+  });
+// Event listener for mouseover on a shoe image (assuming there's an image with id 'shoeImage' in the HTML)
+document.getElementById("shoeImage").addEventListener("mouseover", function () {
+    alert("This is our top-selling shoe!");
+  });  
+// Your provided JavaScript code goes here...
+
+</script>
+
+</body>
+</html>

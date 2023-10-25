@@ -1,0 +1,78 @@
+"use strict"
+
+//example // Array of x products
+let shoes = [
+    { brand: "Adidas", model: "Ultraboost", size: 40, price: 90.0 },
+    { brand: "Puma", model: "Rebel", size: 41, price: 120.0 },
+    { brand: "New Balance", model: "Fresh Foam", size: 42, price: 140.0 },
+];
+
+
+let maxPrice = 130;
+let index = 0;
+// while loop executed until certain conditions met. such that 130 < 140 true then exit loop.
+console.log("while loop...");
+while (shoes[index] && shoes[index].price <= maxPrice) {
+    console.log(shoes[index].model);
+    index++;
+}
+console.log();
+
+
+// write sown the for loop that will display all the shoes below the max price. should be 2 items.
+// for (let index = 0; index < array.length; index++) {
+//     if (shoes[index].price < maxPrice) {
+//         console.log(`Shoes below max price: ${shoes[index].brand}`);
+//     }
+
+// }
+
+console.log("For each loop...");
+//preffered way.
+//for each
+shoes.forEach(x => {
+    if (x.price <= maxPrice) {
+        console.log(x.model);
+    }
+});
+
+console.log();
+
+
+console.log("Gor each student");
+
+
+
+
+
+
+//different for loops.!!!
+
+// // For...in loop to iterate over properties of a shoe object
+// for (let property in shoe) {
+//     console.log(`${property}: ${shoe[property]}`);
+//   }
+// shoes.forEach(x => {
+//     if (x.price <= maxPrice) {
+//       console.log(x.model);
+//     }
+//   });
+// // For...in loop to iterate over properties of a shoe object
+//   for (let property in shoe) {
+//     console.log(`${property}: ${shoe[property]}`);
+//   }
+// shoes.forEach((shoe) => {
+//  for (let property in shoe) {
+//     console.log(`${property}: ${shoe[property]}`);
+//   }
+// });
+
+
+
+
+
+// for (let i = 0; i < shoes.length; i++) {
+//     if(shoes[i].price <= maxPrice){
+//         console.log(shoes[i].brand);
+//     }
+//   }
