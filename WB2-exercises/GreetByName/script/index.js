@@ -2,7 +2,7 @@
 // window.onload = onHelloBtnClicked;
 window.onload = init;
 function init() {
-    //grabbing click me bytton by id using greetBtn id.
+    //grabbing click me button by id using greetBtn id.
     const helloBtn = document.getElementById("greetBtn");
 
     //this line will triger onHelloBtnClicked() function on click.
