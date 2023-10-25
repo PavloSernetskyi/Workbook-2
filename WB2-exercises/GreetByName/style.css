@@ -1,0 +1,22 @@
+.div 
+{
+    margin: 50px;
+    background-color: palegoldenrod;
+    width: 400px;
+    height: 200px;
+    border: 2px black solid;
+}
+
+#nameField {
+    margin: 20px;
+}
+
+#greetBtn 
+{
+    margin-left: 50px;
+    border-radius: 20%;
+}
+
+#p {
+    margin-left: 50px;
+}

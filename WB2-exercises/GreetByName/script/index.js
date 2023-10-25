@@ -1,22 +1,29 @@
 "use strict";
+// window.onload = onHelloBtnClicked;
 window.onload = init;
 function init() {
-    const helloBtn = document.getElementById("helloBtn");
+    //grabbing click me bytton by id using greetBtn id.
+    const helloBtn = document.getElementById("greetBtn");
+
+    //this line will triger onHelloBtnClicked() function on click.
     helloBtn.onclick = onHelloBtnClicked;
 }
 function onHelloBtnClicked() {
-    alert("Hi there!");
+    const storeUserName = document.getElementById("userInput").value;
+    //extract the name from name var.
+    
+    let message = `Hi ${storeUserName}`;
+    document.getElementById('output').innerText = message;
+    // alert("Hi"+ name + "there!");
 }
 
 
-//////////////////////////////////////////
 
-// // We would want this code to run when the user clicks the Show button
-// const nameField = document.getElementById("nameField");
-// const ageField = document.getElementById("ageField");
-// let name = nameField.value;
-// let age = ageField.value; // age is a string here
-// let message =
-//     `Hi ${name}! I hear you are ${age} years old!`;
-// const messagePara = document.getElementById("messagePara");
-// messagePara.innerHTML = message
+// //1)grab input.
+// const name = document.getElementById("nameField");
+// //2)add event listener with type keydown/oncklic etc. 3) and call func.
+// name.addEventListener("onclick", showKeyPressedMessage);
+// //4) have funct.
+// function showKeyPressedMessage() {
+//     alert("You pressed a key");
+// }
